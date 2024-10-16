@@ -28,17 +28,18 @@ catkin config -DCMAKE_BUILD_TYPE=Release
 
 Clone or create your ROS packages inside the `src` folder of your package. For example, you can clone a package from GitHub:
 
- 	```bash
- 	git clone https://github.com/<username>/<your_package>.git
- 	```
+```bash
+git clone https://github.com/<username>/<your_package>.git
+```
 
 **4. Compile the Workspace**:
 
 To compile all the packages inside your workspace, navigate to the root of the Catkin workspace (`your_ws`) and run:
- 	```bash
- 	catkin build
- 	```
-Note. When you compile the workspace, ROS will automatically create the `build` and `devel` directories.
+```bash
+catkin build
+```
+
+**Note**. When you compile the workspace, ROS will automatically create the `build` and `devel` directories.
 
 **5. Source the Workspace**:
 
@@ -46,19 +47,21 @@ After building, you need to source the `setup.bash` file in the `devel` director
 
 ```bash
  	source devel/setup.bash
- 	```
+```
 **Important**: You must re-execute this command in each new terminal session where you want ROS to recognize the packages in this workspace.
 
-**Automating the Process**:
-This process can be automated, often by including the sourcing command in the `.bashrc` file. To do this, add the following line to your `~/.bashrc` file:
- 	```bash
- 	echo "source ~/your_ws/devel/setup.bash" >> ~/.bashrc
- 	source ~/.bashrc
- 	```
+**Automating the Process**:This process can be automated, often by including the sourcing command in the `.bashrc` file. To do this, add the following line to your `~/.bashrc` file:
+ 
+```bash
+echo "source ~/your_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
 ### (optional) may you find some errors, so you can use the "Magic" of rosdep
+
 ```bash
 cd ~/your_ws/src
 rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
-
+source ~/.bashrc
 ```
 
