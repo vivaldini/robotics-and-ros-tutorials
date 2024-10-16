@@ -1,6 +1,7 @@
 ### Catkin workspace
 
 **1. Create a Catkin Workspace**
+
 First, navigate to the directory where you'd like to create the Catkin workspace. 
  	
 ```bash
@@ -11,6 +12,7 @@ cd ~/your_ws/src
 **Note** . your_ws will be your workspace.
 
 **2. Initialize the Workspace**
+
 Initialize the Catkin workspace by running the following command inside the `src` subdirectory:
 
 ```bash
@@ -23,12 +25,15 @@ catkin config -DCMAKE_BUILD_TYPE=Release
 **Note**. This creates the necessary `CMakeLists.txt` in the `src` directory.
 
 **3. Download/Create Packages**
+
 Clone or create your ROS packages inside the `src` folder of your package. For example, you can clone a package from GitHub:
+
  	```bash
  	git clone https://github.com/<username>/<your_package>.git
  	```
 
 **4. Compile the Workspace**:
+
 To compile all the packages inside your workspace, navigate to the root of the Catkin workspace (`your_ws`) and run:
  	```bash
  	catkin build
@@ -36,6 +41,7 @@ To compile all the packages inside your workspace, navigate to the root of the C
 Note. When you compile the workspace, ROS will automatically create the `build` and `devel` directories.
 
 **5. Source the Workspace**:
+
 After building, you need to source the `setup.bash` file in the `devel` directory to make the workspace visible to ROS. Run:
 
 ```bash
@@ -53,10 +59,6 @@ This process can be automated, often by including the sourcing command in the `.
 ```bash
 cd ~/your_ws/src
 rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
-
-cd ~/your_ws/src/dcrobot
-catkin build
-source ~/your_ws/devel/setup.bash
 
 ```
 
