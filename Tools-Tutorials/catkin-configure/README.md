@@ -3,12 +3,12 @@
 **1. Create a Catkin Workspace**
 First, navigate to the directory where you'd like to create the Catkin workspace. 
  	
-  ```bash
- 	mkdir -p ~/your_ws/src
- 	cd ~/your_ws/src
- 	```
+```bash
+mkdir -p ~/your_ws/src
+cd ~/your_ws/src
+```
 
-**Note**. your_ws will be your workspace.
+**Note** . your_ws will be your workspace.
 
 **2. Initialize the Workspace**
 Initialize the Catkin workspace by running the following command inside the `src` subdirectory:
