@@ -14,6 +14,7 @@ cd ~/your_ws/src
 Initialize the Catkin workspace by running the following command inside the `src` subdirectory:
 
 ```bash
+cd ~/your_ws/
 catkin init
 catkin config --extend /opt/ros/noetic
 catkin config -DCMAKE_BUILD_TYPE=Release
