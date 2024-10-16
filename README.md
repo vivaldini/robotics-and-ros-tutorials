@@ -11,16 +11,15 @@ robotics-and-ros-tutorials/
 │
 ├── README.md           	# Repository description
 ├── ROS-Tutorials/       	# Tutorials related to ROS
-│   ├── tutorial_1/      	# First ROS tutorial
-│   └── tutorial_2/      	# Second ROS tutorial
 │
 └── Robotics-Tutorials/  	# Tutorials related to general robotics
-	├── tutorial_1/      	# First robotics tutorial
-	└── tutorial_2/      	# Second robotics tutorial
+│
 └── tools-Tutorials/     	# Tutorials related to tools used in robotics/ROS
-	├── Ubuntu/		# Operating System
-	├── catkin-configure/         	# Catkin configuration tutorial
-	└── catkin-clear/      	# Catkin cleanup tutorial
+│   ├── Ubuntu/			# Operational System
+│   ├── catkin-configure/       # Catkin configuration tutorial
+│   ├── catkin-clear/      	# Catkin cleanup tutorial
+│   └── catkin-clear/      	# Catkin cleanup tutorial
+
 ```
 
 ### ROS Tutorials
