@@ -15,10 +15,10 @@ robotics-and-ros-tutorials/
 └── Robotics-Tutorials/  	# Tutorials related to general robotics
 │
 └── tools-Tutorials/     	# Tutorials related to tools used in robotics/ROS
-│   ├── [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)/			  # Operational System
-│   ├── [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)/       # Catkin configuration tutorial
-│   ├── catkin-clear/      	# Catkin cleanup tutorial
-│   └── [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)/      	      # Nvidia graphics drives
+│   ├── [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)		  # Operational System
+│   ├── [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)       # Catkin configuration tutorial
+│   ├── catkin-clear      	# Catkin cleanup tutorial
+│   └── [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)     	      # Nvidia graphics drives
 
 ```
 
