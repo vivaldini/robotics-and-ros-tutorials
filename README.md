@@ -8,16 +8,16 @@ The repository is organized into two main categories:
 
 robotics-and-ros-tutorials/
 │
-├── README.md           	# Repository description
-├── ROS-Tutorials/       	# Tutorials related to ROS
+├── README.md              # Repository description
+├── ROS-Tutorials/         # Tutorials related to ROS
 │
-└── Robotics-Tutorials/  	# Tutorials related to general robotics
+└── Robotics-Tutorials/    # Tutorials related to general robotics
 │
-└── tools-Tutorials/     	# Tutorials related to tools used in robotics/ROS
-│   ├── [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)		  # Operational System
-│   ├── [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)       # Catkin configuration tutorial
-│   ├── catkin-clear      	# Catkin cleanup tutorial
-│   └── [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)     	      # Nvidia graphics drives
+└── Tools-Tutorials/       # Tutorials related to tools used in robotics/ROS
+    ├── [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)              # Operating System
+    ├── [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)  # Catkin configuration tutorial
+    ├── [catkin-clear](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-clear)        # Catkin cleanup tutorial
+    └── [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)                # Nvidia graphics drivers
 
 
 ### ROS Tutorials
