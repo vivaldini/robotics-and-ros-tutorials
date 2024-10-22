@@ -6,7 +6,6 @@ This repository contains a collection of tutorials focused on **robotics**, **RO
 
 The repository is organized into two main categories:
 
-```
 robotics-and-ros-tutorials/
 │
 ├── README.md           	# Repository description
@@ -20,7 +19,6 @@ robotics-and-ros-tutorials/
 │   ├── catkin-clear      	# Catkin cleanup tutorial
 │   └── [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)     	      # Nvidia graphics drives
 
-```
 
 ### ROS Tutorials
 
