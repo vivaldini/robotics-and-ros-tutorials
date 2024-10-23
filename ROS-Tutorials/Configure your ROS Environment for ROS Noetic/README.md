@@ -58,7 +58,7 @@ rosversion -d
 
 ## 3. Set up your Catkin Workspace
 
-You can use the Catkin build system to manage packages in ROS Noetic. To create a Catkin workspace, follow these [tutorial](https://github.com/vivaldini/robotics-and-ros-tutorials/edit/main/Tools-Tutorials/catkin-configure/README.md).
+You can use the Catkin build system to manage packages in ROS Noetic. To create a Catkin workspace, follow this [tutorial](https://github.com/vivaldini/robotics-and-ros-tutorials/edit/main/Tools-Tutorials/catkin-configure/README.md).
 
 
 ## 4. Create a ROS Package
