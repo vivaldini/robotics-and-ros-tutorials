@@ -2,19 +2,6 @@
 
 This repository contains a collection of tutorials focused on **robotics**, **ROS (Robot Operating System)**, and, various **tool** used in this field. The goal is to provide practical examples and detailed guides to help learners understand key concepts, build projects, and gain hands-on experience.
 
-## Repository Structure
-
-The repository is organized into three main categories:
-
-- [ROS-Tutorials](ROS-Tutorials/)            # Tutorials related to ROS
-- [Robotics-Tutorials](Robotics-Tutorials/)  # Tutorials related to general robotics
-- [Tools-Tutorials](Tools-Tutorials/)        # Tutorials related to tools used in robotics/ROS
-    - [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)                      # Operating System
-    - [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)  # Catkin configuration tutorial
-    - [catkin-clear](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-clear)          # Catkin cleanup tutorial
-    - [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)                      # Nvidia graphics drivers
-
-
 ### ROS Tutorials
 
 The **ROS-Tutorials** directory contains hands-on guides for learning ROS, from beginner to advanced levels. Each tutorial includes:
@@ -28,6 +15,21 @@ The **Robotics-Tutorials** directory covers fundamental topics in robotics, rang
 
 ### Tools
 The Tools-Tutorials directory contains tutorials on essential robotics and ROS development tools.
+
+## Repository Structure
+
+The repository is organized into three main categories:
+
+- [ROS-Tutorials](ROS-Tutorials/)            # Tutorials related to ROS
+    - [Configure your ROS Environment for ROS Noetic](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/ROS-Tutorials/Configure%20your%20ROS%20Environment%20for%20ROS%20Noetic)
+- [Robotics-Tutorials](Robotics-Tutorials/)  # Tutorials related to general robotics
+- [Tools-Tutorials](Tools-Tutorials/)        # Tutorials related to tools used in robotics/ROS
+    - [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)                      # Operating System
+    - [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)  # Catkin configuration tutorial
+    - [catkin-clear](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-clear)          # Catkin cleanup tutorial
+    - [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)                      # Nvidia graphics drivers
+
+
 
 ## Prerequisites
 
