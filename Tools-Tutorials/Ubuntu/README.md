@@ -8,7 +8,7 @@ Download Ubuntu 20.04:* Visit the official Ubuntu website at [https://ubuntu.com
 
 Create a bootable USB drive using a tool like "Rufus" on Windows or "Etcher" on Linux or macOS. This will allow you to boot Ubuntu from the USB drive.
 
-**2 - Booting into Ubuntu 20.04**
+**2. Booting into Ubuntu 20.04**
 
 > [!WARNING]
 > Before you begin, make sure to back up your important data, as the installation of the operating system typically involves disk formatting.
@@ -20,7 +20,7 @@ Create a bootable USB drive using a tool like "Rufus" on Windows or "Etcher" on 
  2.3 - In the boot menu, choose the option corresponding to the USB drive you created and press Enter.
 ```
 
-**3: Installing Ubuntu 20.04**
+**3. Installing Ubuntu 20.04**
 ```bash
 3.1 - The Ubuntu Live USB will start. You can try Ubuntu without installing it, but for installation, click the "Install Ubuntu" icon on the desktop.
 
