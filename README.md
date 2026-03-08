@@ -20,13 +20,17 @@ The Tools-Tutorials directory contains tutorials on essential robotics and ROS d
 
 The repository is organized into three main categories:
 
-- [ROS-Tutorials](ROS-Tutorials/)            # Tutorials related to ROS
-    - [Configure your ROS Environment for ROS Noetic](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/ROS-Tutorials/Configure%20your%20ROS%20Environment%20for%20ROS%20Noetic)
+- [ROS-Tutorials](ROS-Tutorials/)            # Tutorials to install ROS
+    - [ROS Environment - ROS Noetic](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/ROS-Tutorials/Configure%20your%20ROS%20Environment%20for%20ROS%20Noetic)
+    - [ROS Environment - ROS 2 Jazzy](https://github.com/vivaldini/robotics-and-ros-tutorials/blob/main/ROS-Tutorials/ROS2_jazzy.md)
 - [Robotics-Tutorials](Robotics-Tutorials/)  # Tutorials related to general robotics
 - [Tools-Tutorials](Tools-Tutorials/)        # Tutorials related to tools used in robotics/ROS
-    - [Ubuntu](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)                      # Operating System
-    - [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)  # Catkin configuration tutorial
-    - [catkin-clear](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-clear)          # Catkin cleanup tutorial
+    - ROS Noetic
+        - [Ubuntu 20.04](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Ubuntu)                      # Operating System
+        - [catkin-configure](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-configure)  # Catkin configuration tutorial
+        - [catkin-clear](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/catkin-clear)          # Catkin cleanup tutorial
+    - ROS Jazzy
+        - [Ubuntu 24.03](https://github.com/vivaldini/robotics-and-ros-tutorials/blob/main/Tools-Tutorials/Ubuntu/Ubuntu24.04.3.md)    
     - [Nvidia](https://github.com/vivaldini/robotics-and-ros-tutorials/tree/main/Tools-Tutorials/Nvidia)                      # Nvidia graphics drivers
 
 
