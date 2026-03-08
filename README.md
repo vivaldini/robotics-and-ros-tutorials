@@ -38,7 +38,8 @@ The repository is organized into three main categories:
 ## Prerequisites
 
 - For **ROS Tutorials**, you need to have ROS installed on your system. [Official ROS installation guide](http://wiki.ros.org/ROS/Installation)
-- For **Robotics Tutorials**, basic understanding of robotics principles and programming is recommended.
+- For **ROS 2 Tutorials**, you need to have ROS 2 installed on your system. [Official ROS 2 installation guide](https://docs.ros.org/en/jazzy/Installation.html)
+- For **Robotics Tutorials**, a basic understanding of robotics principles and programming is recommended.
 
 ## License
 
