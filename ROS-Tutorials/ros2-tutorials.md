@@ -15,33 +15,26 @@ The material is designed for students and beginners who want to learn how to dev
 
 ```bash
 ros2-tutorials/
-│   01_create_workspace
-└── scripts/
+│   1_create_workspace
+└──── scripts/
 │   └── setup_workspace.sh
-│   02_create_package.md
-│   03_build_package.md
-│   04_ros2_nodes.md
-│   ├── python_nodes/
-│   └── cpp_nodes/
-│   05_publisher_subscriber.md
-│   06_services.md
-│   07_actions.md
-│   08_launch_files.md
-│   09_simulation_gazebo.md
-
+│   2_create_package
+│   └── build_package
+│   3_ros2_nodes
+│   └── python_nodes/
 ```
 
-## 01 - Creating a ROS 2 Workspace
+## 1 - Creating a ROS 2 Workspace
 
 A workspace is the main directory where ROS 2 packages are developed and compiled.
 
-### Step 1 – Go to the Home Directory
+### Step 1.1 – Go to the Home Directory
 
 ```bash
 cd
 ```
 
-### Step 2 – Create a Workspace
+### Step 1.2 – Create a Workspace
 Create a new workspace directory. In this tutorial, we will call it ``ros2_ws``, but you can choose any name. 
 
 ```bash
@@ -51,12 +44,12 @@ mkdir ros2_ws
 > [!NOTE]
 > The suffix ``ws`` is commonly used to indicate a workspace.
 
-### Step 3  – Enter the Workspace
+### Step 1.3  – Enter the Workspace
 Move into the workspace directory:
 ```bash
 cd ros2_ws
 ```
-### Step 4 – Create the Source Folder
+### Step 1.4 – Create the Source Folder
 Inside the workspace, create the src folder. This directory will contain all your ROS 2 packages.
 
 ```bash
@@ -64,7 +57,6 @@ mkdir src
 ```
 
 You can verify the contents of the workspace:
-
 ```bash
 ls
 ```
@@ -74,9 +66,9 @@ Expected output:
 src
 ```
 
-### Step 5 – Build the Workspace
+### Step 1.5 – Build the Workspace
 
-The command used to compile ROS 2 workspace is ``colcon build``. 
+The command used to compile the ROS 2 workspace is ``colcon build``. 
 
 ```bash
 colcon build
@@ -87,7 +79,7 @@ colcon build
 Summary: 0 packages finished [0.44s]
 ```
 
-### Step 6 – Workspace Structure
+### Step 1.6 – Workspace Structure
 After building, new folders will be created automatically. Check them using:
 
 ```bash
@@ -106,7 +98,7 @@ build  install  log  src
 | `install`   | Installed packages and setup scripts used to configure the environment |
 | `log`       | Log files generated during the build process |## Step 7 – Install ROS Development Tools (if necessary)
 
-### Step 7 – Source the Workspace
+### Step 1.7 – Source the Workspace
 Enter the ``install` directory:
 
 ```bash
@@ -136,7 +128,7 @@ Activate the workspace:
 source setup.bash
 ```
 
-### Step 8 – Add to .bashrc
+### Step 1.8 – Add to .bashrc
 
 To avoid running the source command every time, you can add it to your ``.bashrc``.
 Go back to the home directory and open the ``.bashrc`` file:
@@ -163,12 +155,12 @@ sudo apt-get install ros-dev-tools
 ```
 
 
-# ROS 2 Package 
+# 2. ROS 2 Package 
 
 In ROS 2, Python packages and C++ packages have completely different architectures.
 
-## ROS 2  Python Package 
-### Step 1 - Create the Python Package
+## 2.1 ROS 2 Python Package 
+
 To create a package, we use the ROS 2 command line tool.
 
 ```bash
@@ -188,7 +180,7 @@ ros2 pkg create py_pkg --build-type ament_python --dependencies rclpy
 > [!NOTE]
 > After running the command, ROS 2 will create several files and folders. You may see a license warning: ``WARNING: No license file found``. A license is only necessary if you plan to publish your code as open source.
 
-### Step 2  -  Open the Package in VS Code
+#### Step 2.1.1  -  Open the Package in VS Code
 It is recommended to open Visual Studio Code from the src folder. or other preference editor
 ```bash
 code .
@@ -198,7 +190,7 @@ Opening VSCode from this location helps with:
 - imports
 - ROS dependencies detection
 
-### Step 3 - Python Package Structure
+#### Step 2.1.2 - Python Package Structure
 Your Python package will contain the following structure:
 
 ```bash
@@ -226,7 +218,7 @@ my_py_pkg/
 >  No arquivo `package.xml` você adiconar as dependências neste arquivo, ver exemplo ``<depend>rlcpy</depend>``
 
 
-### Step 4 - Build the Package
+#### Step 2.1.3 - Build the Package
 Return to the workspace root directory:
 
 ```bash
@@ -239,15 +231,14 @@ colcon build
 
 ```
 
-## Step 5 - Build a Specific Package
+#### Step 2.1.4 - Build a Specific Package
 ```bash
 colcon build --packages-select py_pkg
 
 ```
 
 
-## ROS 2  C++ Package 
-### Step 1 - Create the C++ Package in ROS 2
+## 2.2 ROS 2  C++ Package 
 
 To create a C++ package, we use the ROS 2 command line tool.
 
@@ -273,7 +264,7 @@ ros2 pkg create cpp_pkg --build-type ament_cmake --dependencies rclcpp
 ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp std_msgs
 ```
 
-## Step 2  -  Open the Package in VS Code
+#### Step 2.2.1  -  Open the Package in VS Code
 It is recommended to open Visual Studio Code from the src folder. or other preference editor
 ```bash
 code .
@@ -283,7 +274,8 @@ Opening VSCode from this location helps with:
 - imports
 - ROS dependencies detection
 
-### Step 3 - C++ Package Structure
+
+#### Step 2.2.2 - C++ Package Structure
 The structure of a C++ package: 
 
 ```bash
@@ -307,8 +299,7 @@ my_cpp_pkg/
 > [!NOTE]
 >  No arquivo `package.xml` você adicionar as dependências neste arquivo, ver exemplo ``<depend>rlccpp</depend>``
 
-
-### Step 4 - Build the Package
+#### Step 2.2.3  - Build the Package
 
 Return to the workspace root directory:
 
@@ -327,15 +318,14 @@ rm -r build install log
 Then go back to the workspace root and build again.
 
 
-### Step 5 - Build a Specific Package
+#### Step 2.2.4  - Build a Specific Package
 ```bash
 colcon build --packages-select cpp_pkg
 
 ```
 
 
-
-# ROS 2 Node
+# 3. ROS 2 Node
 
 A node is a small program that performs a specific task inside a ROS 2 application.
 
@@ -364,16 +354,13 @@ application
     └── state_publisher_node
 ```
 
-## Create a ROS 2 Python Node
-
-### Step 1 - Go to Your Package
+## 3.1 Create a ROS 2 Python Node
 
 Go to your ROS 2 workspace and enter your package:
 ```bash
 cd ~/ros2_ws/src/py_pkg/py_pkg
 ```
-
-### Step 2 - Write a simple Node Code
+### Step 3.1.1  - Write a simple Node Code
 
 Open a file:
 ```bash
@@ -409,7 +396,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### Step 2.1 - Make the File Executable
+#### Step 3.1.1.1 - Make the File Executable
 ```bash
 chmod +x my_first_simple_node.py
 ```
@@ -420,7 +407,7 @@ chmod +x my_first_simple_node.py
 > - ` +x` = adds executable permission
 
 
-#### Step 2.2 — Run the simple Node (Direct Execution)
+#### Step 3.1.1.2 — Run the simple Node (Direct Execution)
 ```bash
 ./my_first_simple_node.py
 ```
@@ -432,7 +419,7 @@ Stop with:
 Ctrl + C
 ```
 
-#### Step 2.3 - Register the simple Node in setup.py
+#### Step 3.1.1.3 - Register the simple Node in setup.py
 Open:
 ```bash
 cd ~/ros2_ws/src/py_pkg
@@ -447,13 +434,13 @@ entry_points={
 ```
 
 
-#### Step 2.4 - Build the Workspace
+#### Step 3.1.1.4 - Build the Workspace
 ```bash
 cd ~/ros2_ws
 colcon build --packages-select py_pkg
 ```
 
-#### Step 2.5 - Source the Workspace
+#### Step 3.1.1.5 - Source the Workspace
 ```bash
 source install/setup.bash
 ```
@@ -463,13 +450,13 @@ or
 source ~/.bashrc
 ```
 
-#### Step 2.6 - Run the Node with ROS 2
+#### Step 3.1.1.6 - Run the Node with ROS 2
 
 ```bash
 ros2 run py_pkg py_node
 ```
 
-#### Step 2.7 - Key Concepts
+#### Step 3.1.1.7 - Key Concepts
 > [!IMPORTANT]
 > There are three different names
 
@@ -481,7 +468,7 @@ ros2 run py_pkg py_node
 
 
 
-### Step 3 Write an OPP Node Code
+### Step 3.1.2 Write an OPP Node Code
 
 Open a file:
 ```bash
@@ -526,7 +513,7 @@ if __name__ == "__main__":
 > - `rclpy.spin(node)`: the node will keep running indefinitely, execute callbacks (like timers, subscribers, etc.), stop only when you press `Ctrl + C`.
 > This structure makes your node modular, reusable, and scalable.
 
-#### Step 3.1 - Make the File Executable
+#### Step 3.1.2.1 - Make the File Executable
 ```bash
 chmod +x my_first_opp_node.py
 ```
@@ -537,7 +524,7 @@ chmod +x my_first_opp_node.py
 > - ` +x` = adds executable permission
 
 
-#### Step 3.2 — Run the Node (Direct Execution)
+#### Step 3.1.2.2 — Run the Node (Direct Execution)
 ```bash
 ./my_first_opp_node.py
 ```
@@ -549,7 +536,7 @@ Stop with:
 Ctrl + C
 ```
 
-#### Step 3.3 - Register the Node in setup.py
+#### Step 3.1.2.3 - Register the Node in setup.py
 Open:
 ```bash
 cd ~/ros2_ws/src/py_pkg
@@ -564,13 +551,13 @@ entry_points={
 ```
 
 
-#### Step 3.4 - Build the Workspace
+#### Step 3.1.2.4 - Build the Workspace
 ```bash
 cd ~/ros2_ws
 colcon build --packages-select py_pkg
 ```
 
-#### Step 3.5 - Source the Workspace 
+#### Step 3.1.2.5 - Source the Workspace 
 ```bash
 source install/setup.bash
 ```
@@ -580,13 +567,13 @@ or
 source ~/.bashrc
 ```
 
-#### Step 3.6 - Run the OPP Node with ROS 2
+#### Step 3.1.2.6 - Run the OPP Node with ROS 2
 
 ```bash
 ros2 run py_pkg py_node
 ```
 
-#### Step 3.7 - Key Concepts
+#### Step 3.1.2.7 - Key Concepts
 > [!IMPORTANT]
 > There are three different names:
 > - File name: `my_first_node.py`
