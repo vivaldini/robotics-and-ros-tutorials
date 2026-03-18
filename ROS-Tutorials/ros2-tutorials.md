@@ -246,7 +246,6 @@ colcon build --packages-select py_pkg
 ```
 
 
-
 ## ROS 2  C++ Package 
 ### Step 1 - Create the C++ Package in ROS 2
 
@@ -374,34 +373,45 @@ Go to your ROS 2 workspace and enter your package:
 cd ~/ros2_ws/src/py_pkg/py_pkg
 ```
 
-### Step 2 - Create the Node File
+### Step 2 - Write a simple Node Code
+
+Open a file:
 ```bash
-gedit my_first_node.py
+gedit my_first_simple_node.py
 ```
-### Step 3 - Write the Node Code
 
-Open the file and add:
+Add:
 ```bash
-#!/usr/bin/env python3
-
+# Import the main ROS 2 Python library
 import rclpy
+# Import the Node class, which allows us to create ROS 2 nodes
 from rclpy.node import Node
 
+# Define the main function for this node
 def main(args=None):
+    # Initialize ROS 2 communications, must be called before using any ROS functionality
     rclpy.init(args=args)
+    
+    # Create a Node instance with the name "py_test"
     node = Node("py_test")
+    
+    # Use the node's logger to print an info-level message
     node.get_logger().info("Hello World")
+    
+    # Keep the node alive, waiting for callbacks (if any)
     rclpy.spin(node)
+    
+    # Shutdown ROS 2 cleanly after spinning stops
     rclpy.shutdown()
 
+# Standard Python idiom to call main() if this file is executed directly
 if __name__ == "__main__":
     main()
 ```
 
-
-### Step 4 - Make the File Executable
+#### Step 2.1 - Make the File Executable
 ```bash
-chmod +x my_first_node.py
+chmod +x my_first_simple_node.py
 ```
 > [!NOTE]
 > This command gives execution permission to the file.
@@ -410,9 +420,9 @@ chmod +x my_first_node.py
 > - ` +x` = adds executable permission
 
 
-### Step 5 — Run the Node (Direct Execution)
+#### Step 2.2 — Run the simple Node (Direct Execution)
 ```bash
-./my_first_node.py
+./my_first_simple_node.py
 ```
 ```bash
 [INFO] [py_test]: Hello World
@@ -422,7 +432,7 @@ Stop with:
 Ctrl + C
 ```
 
-### Step 6 - Register the Node in setup.py
+#### Step 2.3 - Register the simple Node in setup.py
 Open:
 ```bash
 cd ~/ros2_ws/src/py_pkg
@@ -431,18 +441,19 @@ Edit `setup.py`:
 ```bash
 entry_points={
     'console_scripts': [
-        'py_node = py_pkg.my_first_node:main',
+        'py_node = py_pkg.my_first_simple_node:main',
     ],
 },
 ```
 
-### Step 7 - Build the Workspace
+
+#### Step 2.4 - Build the Workspace
 ```bash
 cd ~/ros2_ws
 colcon build --packages-select py_pkg
 ```
 
-### Step 8 - Source the Workspace
+#### Step 2.5 - Source the Workspace
 ```bash
 source install/setup.bash
 ```
@@ -452,21 +463,142 @@ or
 source ~/.bashrc
 ```
 
-### Step 9 - Run the Node with ROS 2
+#### Step 2.6 - Run the Node with ROS 2
 
 ```bash
 ros2 run py_pkg py_node
 ```
 
-### Step 10 - Key Concepts
+#### Step 2.7 - Key Concepts
+> [!IMPORTANT]
+> There are three different names
+
+| Type            | Where it is defined | Example                    |
+|-----------------|--------------------|-----------------------------|
+| Node name       | in the code        | `Node("py_test")`           |
+| File name       | file name          | `my_first_simple_node.py`   |
+| Executable name | setup.py           | `py_node`                   |
+
+
+
+### Step 3 Write an OPP Node Code
+
+Open a file:
+```bash
+gedit my_first_opp_node.py
+```
+
+Open the file and add:
+```bash
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+
+
+class MyNode(Node):
+
+    def __init__(self):
+        super().__init__("py_test_opp")
+        self.counter_ = 0
+        self.get_logger().info("Hello world")
+        self.create_timer(1.0, self.timer_callback)
+
+    def timer_callback(self):
+        self.get_logger().info("Hello " + str(self.counter_))
+        self.counter_ += 1
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = MyNode()
+    rclpy.spin(node)
+    rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
+```
+
+> [!NOTE]
+> This version uses Object-Oriented Programming (OOP), which is the recommended approach for creating ROS 2 nodes.
+> - `class MyNode(Node)`: creates a custom node class
+> - `super().__init__("py_test_opp")`: defines the node name
+> - `self.create_timer(1.0, callback)`: executes a function every 1 second, allowing the node to run continuously without needing loops.
+> - `self.counter_`: stores internal state
+> - `rclpy.spin(node)`: the node will keep running indefinitely, execute callbacks (like timers, subscribers, etc.), stop only when you press `Ctrl + C`.
+> This structure makes your node modular, reusable, and scalable.
+
+#### Step 3.1 - Make the File Executable
+```bash
+chmod +x my_first_opp_node.py
+```
+> [!NOTE]
+> This command gives execution permission to the file.
+>  Without it, you cannot run the script directly using ./my_first_opp_node.py.
+> - `chmod` = change file permissions
+> - ` +x` = adds executable permission
+
+
+#### Step 3.2 — Run the Node (Direct Execution)
+```bash
+./my_first_opp_node.py
+```
+```bash
+[INFO] [py_test_opp]: Hello World
+```
+Stop with:
+```bash
+Ctrl + C
+```
+
+#### Step 3.3 - Register the Node in setup.py
+Open:
+```bash
+cd ~/ros2_ws/src/py_pkg
+```
+Edit `setup.py`:
+```bash
+entry_points={
+    'console_scripts': [
+        'py_node_opp = py_pkg.my_first_opp_node:main',
+    ],
+},
+```
+
+
+#### Step 3.4 - Build the Workspace
+```bash
+cd ~/ros2_ws
+colcon build --packages-select py_pkg
+```
+
+#### Step 3.5 - Source the Workspace 
+```bash
+source install/setup.bash
+```
+or
+
+```bash
+source ~/.bashrc
+```
+
+#### Step 3.6 - Run the OPP Node with ROS 2
+
+```bash
+ros2 run py_pkg py_node
+```
+
+#### Step 3.7 - Key Concepts
 > [!IMPORTANT]
 > There are three different names:
 > - File name: `my_first_node.py`
-> - Node name: `py_test`
-> - Executable name: `py_node`
+> - Node name: `py_test_opp`
+> - Executable name: `py_node_opp`
 
 
 > [!NOTE]
 >  They are different and independent.
 
-
+| Type            | Where it is defined | Example              |
+|-----------------|--------------------|----------------------|
+| Node name       | in the code        | `Node("py_test_opp")`    |
+| File name       | file name          | `my_first_opp_node.py`   |
+| Executable name | setup.py           | `py_node_opp`            |
