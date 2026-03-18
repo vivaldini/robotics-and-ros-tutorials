@@ -247,7 +247,6 @@ colcon build --packages-select py_pkg
 
 
 
-
 ## ROS 2  C++ Package 
 ### Step 1 - Create the C++ Package in ROS 2
 
@@ -257,8 +256,8 @@ To create a C++ package, we use the ROS 2 command line tool.
 cd ~/ros2_ws/src/
 ros2 pkg create cpp_pkg --build-type ament_cmake --dependencies rclcpp
 ```
-> [!NOTE]
-> | Element  |  Description|
+
+| Element  |  Description|
 |--------------|-----------------------------------------------------------------------------------|
 |`ros2`|   ROS 2 command line interface|
 |`pkg create `|   Creates a new package|
@@ -268,8 +267,8 @@ ros2 pkg create cpp_pkg --build-type ament_cmake --dependencies rclcpp
 
 
 > [!NOTE]
-> After running the command, ROS 2 will create several files and folders. You may see a license warning: ``WARNING: No license file found``. A license is only necessary if you plan to publish your code as open source.
-> ``rclcpp`` allows you to write C++ code that interacts with ROS 2 functionalities, such as nodes, topics, services and actions. You can include others dependencies.
+> - After running the command, ROS 2 will create several files and folders. You may see a license warning: ``WARNING: No license file found``. A license is only necessary if you plan to publish your code as open source.
+> - ``rclcpp`` allows you to write C++ code that interacts with ROS 2 functionalities, such as nodes, topics, services, and actions. You can include other dependencies.
 
 ```bash
 ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp std_msgs
