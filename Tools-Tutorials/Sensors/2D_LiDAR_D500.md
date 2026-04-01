@@ -1,5 +1,6 @@
-# 2D LiDAR D500 - Setup and Usage Guide
+# 2D LiDAR D500 
 
+Guide for setting up and running the 2D LiDAR 500 with ROS 2.
 
 ## 1. Workspace Setup (if needed)
 
