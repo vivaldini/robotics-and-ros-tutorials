@@ -3,8 +3,8 @@
 Guide for setting up and running the Unitree L2 LiDAR with ROS 2.
 
 ## 📖 Table of Contents
-- [1. Initial Setup](#1-initial-setup)
-- [2. Point-LIO ROS 2 Package](#2-point-lio-ros-2-package)
+- [1. Initial Setup](https://github.com/vivaldini/robotics-and-ros-tutorials/blob/main/Tools-Tutorials/Sensors/Unitree4D_LidarL2.md#2-pacote-point-lio-ros2)
+- [2. Point-LIO ROS 2 Package](https://github.com/vivaldini/robotics-and-ros-tutorials/blob/main/Tools-Tutorials/Sensors/Unitree4D_LidarL2.md#2-pacote-point-lio-ros2)
 
 
 ## Features
